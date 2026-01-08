@@ -166,6 +166,7 @@ uvicorn src.api.app:app --host 0.0.0.0 --port 8000
 curl http://localhost:8000/
 
 Endpoint /predict
+
 curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
   -d '{
@@ -195,7 +196,7 @@ curl -X POST http://localhost:8000/predict \
   }'
 
 
-Ответ:
+Целевая переменная:
 
 {
   "default_prediction": 0,
