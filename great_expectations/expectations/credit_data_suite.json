@@ -1,0 +1,28 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "credit_data_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "AGE"}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {"column": "AGE", "min_value": 18, "max_value": 120}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "LIMIT_BAL"}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {"column": "LIMIT_BAL", "min_value": 1}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {"column": "default.payment.next.month", "value_set": [0, 1]}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {"great_expectations_version": "0.18.0"}
+}
