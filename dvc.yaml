@@ -1,0 +1,23 @@
+stages:
+  prepare:
+    cmd: python -m src.data.make_dataset
+    deps:
+      - src/data/make_dataset.py
+      - src/features/build_features.py
+      - data/raw/UCI_Credit_Card.csv
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python -m src.models.train
+    deps:
+      - src/models/train.py
+      - src/models/pipeline.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+    outs:
+      - models/credit_default_model.joblib
+      - artifacts/roc_curve.png
+    metrics:
+      - artifacts/metrics.json
